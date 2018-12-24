@@ -1,0 +1,15 @@
+{
+  "name": "google-photo",
+  "version": "1.0.0",
+  "description": "Google photo client",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Pierre Rolland",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "googleapis": "^36.0.0",
+    "hapi": "^17.8.1",
+    "node-fetch": "^2.3.0"
+  }
+}

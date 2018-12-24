@@ -1,0 +1,22 @@
+.AlbumsPage {
+    display: grid;
+}
+
+.AlbumsPage .AlbumsPage-row {
+    display: flex;
+    width: 100%;
+}
+
+.AlbumsPage .AlbumsPage-album {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 0.2em black;
+}
