@@ -9,6 +9,8 @@ module.exports = {
         const {albumId} = require('../conf/current-album');
         const {photos} = require('../conf/photos')[albumId];
 
-        return h.response(photos);
+        delete require.cache[require.resolve('../conf/photos')];
+
+        return h.response(photos.filter(photo => photo.received));
     }
 };
