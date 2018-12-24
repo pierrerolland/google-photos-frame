@@ -17,17 +17,21 @@ class PhotosPage extends Component {
             .photos(this.props.match.params.albumId)
             .then(photos => {
                 setInterval(() => {
+                    const newIndex = this.state.currentIndex >= this.state.photos.length - 1 ?
+                        0 : this.state.currentIndex + 1;
+
+                    localStorage.setItem('index', newIndex);
+
                     this.setState({
-                        currentIndex: this.state.currentIndex === this.state.photos.length - 1 ?
-                            0 : this.state.currentIndex + 1
+                        currentIndex: newIndex
                     });
                 }, 7000);
-                this.setState({ photos, currentIndex: 0 })
+                this.setState({ photos, currentIndex: localStorage.length > 0 ? localStorage.getItem('index') : 0 })
             });
     }
 
     render() {
-        if (null === this.state.currentIndex) {
+        if (null === this.state.currentIndex || !this.state.photos[this.state.currentIndex]) {
             return null;
         }
 

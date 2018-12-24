@@ -1,4 +1,5 @@
 const google = require('../helpers/google');
+const shuffle = require('lodash/shuffle');
 
 module.exports = {
     method: 'POST',
@@ -11,6 +12,6 @@ module.exports = {
 
         delete require.cache[require.resolve('../conf/photos')];
 
-        return h.response(photos.filter(photo => photo.received));
+        return h.response(shuffle(photos.filter(photo => photo.received)));
     }
 };
